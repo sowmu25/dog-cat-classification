@@ -13,7 +13,7 @@ CORS(app)
 
 
 
-#@cross_origin()
+@cross_origin()
 class ClientApp:
     def __init__(self):
         self.filename = "inputImage.jpg"
@@ -33,7 +33,7 @@ def home():
 def predictRoute():
     image = request.json['image']
     decodeImage(image, clApp.filename)
-    result = clApp.classifier.predictiondogcat()
+    result = ClientApp().classifier.predictiondogcat()
     return jsonify(result)
 
 
